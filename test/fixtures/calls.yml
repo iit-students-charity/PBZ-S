@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duration: 2019-11-07 21:46:43
+  payment_state: false
+  time: 2019-11-07 21:46:43
+  city: MyString
+  user: one
+  invoice: one
+
+two:
+  duration: 2019-11-07 21:46:43
+  payment_state: false
+  time: 2019-11-07 21:46:43
+  city: MyString
+  user: two
+  invoice: two

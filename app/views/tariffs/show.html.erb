@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @tariff.city %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tariff.price %>
+</p>
+
+<p>
+  <strong>Special price:</strong>
+  <%= @tariff.special_price %>
+</p>
+
+<p>
+  <strong>Expire date:</strong>
+  <%= @tariff.expire_date %>
+</p>
+
+<%= link_to 'Edit', edit_tariff_path(@tariff) %> |
+<%= link_to 'Back', tariffs_path %>

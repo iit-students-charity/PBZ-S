@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tariffs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Price</th>
+      <th>Special price</th>
+      <th>Duration</th>
+      <th>Expire date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tariffs.each do |tariff| %>
+      <tr>
+        <td><%= tariff.city %></td>
+        <td><%= tariff.price %></td>
+        <td><%= tariff.special_price %></td>
+        <td><%= tariff.expire_date %></td>
+        <td><%= link_to 'Show', tariff %></td>
+        <td><%= link_to 'Edit', edit_tariff_path(tariff) %></td>
+        <td><%= link_to 'Destroy', tariff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tariff', new_tariff_path %>
