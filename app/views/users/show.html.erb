@@ -20,5 +20,24 @@
   <%= @user.patronymic %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Zadoljennost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.price %></td>
+        <td><%= ((Time.zone.now - invoice.created_at) / 3600).round(2) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

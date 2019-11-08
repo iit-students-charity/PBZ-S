@@ -27,14 +27,13 @@ ActiveRecord::Schema.define(version: 2019_11_07_184643) do
   end
 
   create_table "calls", force: :cascade do |t|
-    t.datetime "duration"
-    t.boolean "payment_state"
+    t.integer "duration"
+    t.boolean "payment_state", default: false
+    t.string "phone_number"
     t.datetime "time"
     t.string "city"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_calls_on_user_id"
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -66,7 +65,6 @@ ActiveRecord::Schema.define(version: 2019_11_07_184643) do
   end
 
   add_foreign_key "adresses", "users"
-  add_foreign_key "calls", "users"
   add_foreign_key "invoices", "calls"
   add_foreign_key "invoices", "users"
 end

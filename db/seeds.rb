@@ -90,6 +90,52 @@ tariffs = [
     }
 ]
 
+calls = [
+    {
+        duration: (5.minute.to_i / 60),
+        payment_state: false,
+        time: 3.hours.ago,
+        city: 'Minsk',
+        phone_number: '+375332281488'
+    },
+    {
+        duration: (7.minute.to_i / 60),
+        payment_state: false,
+        time: 1.day.ago + 3.hours,
+        city: 'Grodno',
+        phone_number: '+375332281488'
+    },
+    # Call.where('time <= :late_time', late_time: 20.days.ago).map { |call| User.find_by(phone_number: call.phone_number) }
+    {
+        duration: (14.minute.to_i / 60),
+        payment_state: false,
+        time: 88.day.ago + 3.hours,
+        city: 'Grodno',
+        phone_number: '+375332281488'
+    },
+    {
+        duration: (14.minute.to_i / 60),
+        payment_state: false,
+        time: 88.day.ago + 3.hours,
+        city: 'Grodno',
+        phone_number: '+12345678910'
+    },
+    {
+        duration: (43.minute.to_i / 60),
+        payment_state: false,
+        time: 4.days.ago,
+        city: 'Minsk',
+        phone_number: '+12345678910'
+    },
+    {
+        duration: (3.minute.to_i / 60),
+        payment_state: false,
+        time: 1.week.ago,
+        city: 'Minsk',
+        phone_number: '+375692281337'
+    }
+]
+
 tariffs.each do |tariff|
     Tariff.create(tariff)
 end
@@ -100,4 +146,8 @@ end
 
 adresses.each do |adress|
     Adress.create(adress)
+end
+
+calls.each do |call|
+    Call.create(call)
 end
