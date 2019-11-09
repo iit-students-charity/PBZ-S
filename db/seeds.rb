@@ -105,7 +105,20 @@ calls = [
         city: 'Grodno',
         phone_number: '+375332281488'
     },
+    # COMMON_YEAR_DAYS_IN_MONTH = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    # MONTHS = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, august: 8, september: 9, october: 10, november: 11, december: 12 }
+    # city = 'Minsk'
+    # month = 'november'
+    # def days_in_month(month, year = Time.now.year)
+    #     return 29 if month == 2 && Date.gregorian_leap?(year)
+    #     COMMON_YEAR_DAYS_IN_MONTH[month]
+    # end
+    # calls = Call.where(city: city).select { |call| call.time.month == MONTHS[month.to_sym] }
+    # days_in_month(MONTHS[month.to_sym]).times do |day|
+    #     puts "#{day + 1} #{Call.where(city: 'Minsk').select { |call| call.time.day == (day + 1) }.count}"
+    # end
     # Call.where('time <= :late_time', late_time: 20.days.ago).map { |call| User.find_by(phone_number: call.phone_number) }
+    # Tariff.where('expire_date >= :date AND created_at <= :date', date: date)
     {
         duration: (14.minute.to_i / 60),
         payment_state: false,
