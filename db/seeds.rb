@@ -115,7 +115,7 @@ calls = [
     # end
     # calls = Call.where(city: city).select { |call| call.time.month == MONTHS[month.to_sym] }
     # days_in_month(MONTHS[month.to_sym]).times do |day|
-    #     puts "#{day + 1} #{Call.where(city: 'Minsk').select { |call| call.time.day == (day + 1) }.count}"
+    #     puts "#{day + 1} #{calls.select { |call| call.time.day == (day + 1) }.count}"
     # end
     # Call.where('time <= :late_time', late_time: 20.days.ago).map { |call| User.find_by(phone_number: call.phone_number) }
     # Tariff.where('expire_date >= :date AND created_at <= :date', date: date)

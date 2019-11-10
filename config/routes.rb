@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'main_page#index'
+  get '/first', to: 'main_page#calls_per_month'
   resources :calls
   resources :invoices
   resources :adresses

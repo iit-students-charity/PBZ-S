@@ -50,9 +50,10 @@ ActiveRecord::Schema.define(version: 2019_11_07_184643) do
     t.string "city"
     t.float "price"
     t.float "special_price"
-    t.date "expire_date"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "expire_date", default: "2019-12-10"
   end
 
   create_table "users", force: :cascade do |t|

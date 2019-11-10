@@ -1,0 +1,12 @@
+<%= form_with(url: '/first', method: 'get', local: true) do |form| %>
+
+  <input name='month' type='month' />
+
+  <select name='city'>
+    <% Tariff.cities.each do |city| %>
+      <option><%= city %></option>
+    <% end %>
+  </select>
+
+  <%= form.submit %>
+<% end %>
