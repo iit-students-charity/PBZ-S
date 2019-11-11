@@ -10,3 +10,14 @@
 
   <%= form.submit %>
 <% end %>
+
+<%= form_with(url: '/second', method: 'get', local: true) do |form| %>
+  <%= form.label 'Bad users' %>
+  <%= form.submit %>
+<% end %>
+
+<%= form_with(url: '/third', method: 'get', local: true) do |form| %>
+  <input name='date' type='date' />
+  <%= form.label 'Bad users' %>
+  <%= form.submit %>
+<% end %>

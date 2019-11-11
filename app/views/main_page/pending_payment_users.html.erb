@@ -1,0 +1,12 @@
+<p>
+<% @users.each do |user| %>
+  <div>
+    <%= 'MTC' %>
+    <%= user.phone_number %>
+    <%= user.full_name %>
+    <%= user.live_adress %><br>
+  </div>
+<% end %>
+</p>
+
+<%= link_to 'Index', root_path %> 

@@ -4,8 +4,6 @@ class MainPageController < ApplicationController
   COMMON_YEAR_DAYS_IN_MONTH = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
   def index
-    @unpayed_users = User.pending_payment
-    # @requested_tariffs =
     render :index 
   end
 
@@ -16,6 +14,16 @@ class MainPageController < ApplicationController
     @calls = Call.where(city: city).select { |call| call.time.month == month && call.time.year == year }
     # binding.pry
     render :calls_per_month
+  end
+
+  def bad_users
+    @users = User.pending_payment
+    render :pending_payment_users
+  end
+
+  def tariff_on_date
+    @tariffs = Tariff.where('expire_date >= :date AND created_at <= :date', date: params.fetch('date'))
+    render :tariffs_on_date
   end
 
   private

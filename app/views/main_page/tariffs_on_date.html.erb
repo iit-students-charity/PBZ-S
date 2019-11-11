@@ -1,0 +1,9 @@
+<% @tariffs.each do |tariff| %>
+  <div>
+    <%= 'MTC' %>
+    <%= tariff.expire_date %>
+    <%= tariff.city %>
+    <%= tariff.price %>
+    <%= tariff.special_price %><br>
+  </div>
+<% end %>
