@@ -1,6 +1,4 @@
 <%= link_to 'Index', root_path %> 
-<p>
-  <% @amount_of_days.times do |day| %>
-   <p><%= "#{day + 1} #{@calls.select { |call| call.time.day == (day + 1) }.count }" %></p>
-  <% end %>
-</p>
+<% @amount_of_days.times do |day| %>
+  <p><%= "#{day + 1} #{@calls.select { |call| call.time.day == (day + 1) }.count }" %></p>
+<% end %>

@@ -15,17 +15,6 @@ ActiveRecord::Schema.define(version: 2019_11_07_184643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "adresses", force: :cascade do |t|
-    t.string "city"
-    t.string "street"
-    t.string "house"
-    t.string "flat"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_adresses_on_user_id"
-  end
-
   create_table "calls", force: :cascade do |t|
     t.integer "duration"
     t.boolean "payment_state", default: false
@@ -53,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_184643) do
     t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "expire_date", default: "2019-12-10"
+    t.date "expire_date", default: "2019-12-12"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,11 +50,11 @@ ActiveRecord::Schema.define(version: 2019_11_07_184643) do
     t.string "name"
     t.string "surname"
     t.string "patronymic"
+    t.string "adress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "adresses", "users"
   add_foreign_key "invoices", "calls"
   add_foreign_key "invoices", "users"
 end

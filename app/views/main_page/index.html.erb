@@ -8,16 +8,20 @@
     <% end %>
   </select>
 
-  <%= form.submit %>
+  <%= form.submit 'Show' %>
 <% end %>
 
 <%= form_with(url: '/second', method: 'get', local: true) do |form| %>
   <%= form.label 'Bad users' %>
-  <%= form.submit %>
+  <%= form.submit 'Show' %>
 <% end %>
 
 <%= form_with(url: '/third', method: 'get', local: true) do |form| %>
   <input name='date' type='date' />
-  <%= form.label 'Bad users' %>
-  <%= form.submit %>
+  <%= form.label 'Tariffs' %>
+  <%= form.submit 'Show' %>
 <% end %>
+
+<%= link_to 'Calls', calls_path %>
+<%= link_to 'Users', users_path %>
+<%= link_to 'Tariffs', tariffs_path %>

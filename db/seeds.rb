@@ -6,48 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-adresses = [
-    {
-        city: 'Bereza',
-        street: 'Komsomolskaya',
-        house: '4',
-        flat: '10',
-        user_id: 1
-    },
-    {
-        city: 'Minsk',
-        street: 'Vikentiya Karpovicha',
-        house: '2',
-        flat: '51',
-        user_id: 2
-    },
-    {
-        city: 'Minsk',
-        street: 'Anharskaya',
-        house: '58',
-        flat: '34',
-        user_id: 3
-    }
-]
-
 users = [
     {
         phone_number: '+375332281488',
         name: 'Valeriy',
         surname: 'Jmishenko',
-        patronymic: 'Albertovich'
+        patronymic: 'Albertovich',
+        adress: 'Ukraine, Donbass 14-88'
     },
     {
         phone_number: '+375692281337',
         name: 'Denis',
         surname: 'Petrov',
-        patronymic: 'Maskovich'
+        patronymic: 'Maskovich',
+        adress: 'Russia, Samara 2-28'
     },
     {
         phone_number: '+12345678910',
         name: 'Random',
         surname: 'Word',
-        patronymic: 'User'
+        patronymic: 'User',
+        adress: 'Belarus, Bereza 4-10'
     }
 ]
 
@@ -141,10 +120,6 @@ end
 
 users.each do |user|
     User.create(user)
-end
-
-adresses.each do |adress|
-    Adress.create(adress)
 end
 
 calls.each do |call|

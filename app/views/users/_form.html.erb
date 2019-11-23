@@ -31,7 +31,10 @@
     <%= form.text_field :patronymic %>
   </div>
 
-  <%= render '../adresses/form' %>
+  <div class="field">
+    <%= form.label :adress %>
+    <%= form.text_field :adress %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
