@@ -1,4 +1,4 @@
-<%= link_to 'На главную', root_path %> 
+<%= link_to 'На главную', root_path %><br>
 <% @amount_of_days.times do |day| %>
-  <p><%= "#{day + 1} - #{@calls.select { |call| call.time.day == (day + 1) }.count }" %></p>
+  <span><%= "#{day + 1} - #{@calls.select { |call| call.time.day == (day + 1) }.count }" %></span><br>
 <% end %>
