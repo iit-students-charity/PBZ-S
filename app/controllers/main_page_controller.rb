@@ -12,7 +12,6 @@ class MainPageController < ApplicationController
     year, month = params.fetch('month').split('-').map(&:to_i)
     @amount_of_days = days_in_month(month)
     @calls = Call.where(city: city).select { |call| call.time.month == month && call.time.year == year }
-    # binding.pry
     render :calls_per_month
   end
 
