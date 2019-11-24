@@ -6,4 +6,8 @@ class User < ApplicationRecord
   def full_name
     [name, surname, patronymic].join(' ')
   end
+
+  def bills
+    invoices.select { |invoice| invoice.price > 0 }
+  end
 end

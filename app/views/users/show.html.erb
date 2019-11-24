@@ -1,43 +1,51 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Phone number:</strong>
+  <strong>Номер телефона:</strong>
   <%= @user.phone_number %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Имя:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Surname:</strong>
+  <strong>Фамилия:</strong>
   <%= @user.surname %>
 </p>
 
 <p>
-  <strong>Patronymic:</strong>
+  <strong>Отчество:</strong>
   <%= @user.patronymic %>
 </p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Price</th>
-      <th>Zadoljennost</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.invoices.each do |invoice| %>
+<% unless @user.bills.empty? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= invoice.price %></td>
-        <td><%= ((Time.zone.now - invoice.created_at) / 3600).round(2) %></td>
+        <th>Задолженность</th>
+        <th>Срок</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <tbody>
+      <% @user.invoices.each do |invoice| %>
+        <tr>
+        <% if invoice.price > 0 %>
+          <%= form_with(url: '/pay', method: 'post', local: true) do |form| %>
+            <%= hidden_field_tag 'id', invoice.id %>
+            <td><%= invoice.price %> руб.</td>
+            <td><%= ((Time.zone.now - invoice.created_at) / 3600 /24).round(2) %> дней</td>
+            <td><input name='amount'/></td>
+            <td><%= form.submit 'Погасить' %></td>
+          <% end %>
+        <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to 'Изменить', edit_user_path(@user) %> |
+<%= link_to 'Назад', users_path %>
