@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :city %>
+    <%= form.label "Город" %>
     <%= form.text_field :city %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label "Цена" %>
     <%= form.text_field :price %>
   </div>
 
   <div class="field">
-    <%= form.label :special_price %>
+    <%= form.label "Льготная цена" %>
     <%= form.text_field :special_price %>
   </div>
   
   <div class="field">
-    <%= form.label :expire_date %>
+    <%= form.label "Действует до" %>
     <%= form.datetime_select :expire_date %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Подтвердить" %>
   </div>
 <% end %>

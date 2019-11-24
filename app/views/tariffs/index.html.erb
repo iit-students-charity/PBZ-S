@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tariffs</h1>
+<h1>Тарифы</h1>
 
 <table>
   <thead>
     <tr>
-      <th>City</th>
-      <th>Price</th>
-      <th>Special price</th>
-      <th>Duration</th>
-      <th>Expire date</th>
-      <th colspan="3"></th>
+      <th>Город</th>
+      <th>Цена</th>
+      <th>Льготная цена</th>
+      <th>Действует до:</th>
+        <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -21,8 +20,8 @@
         <td><%= tariff.price %></td>
         <td><%= tariff.special_price %></td>
         <td><%= tariff.expire_date %></td>
-        <td><%= link_to 'Edit', edit_tariff_path(tariff) %></td>
-        <td><%= link_to 'Destroy', tariff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Править', edit_tariff_path(tariff) %></td>
+        <td><%= link_to 'Удалить', tariff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,8 @@
 
 <br>
 
-<%= link_to 'New Tariff', new_tariff_path %>
+<%= link_to 'Новый тариф', new_tariff_path %>
+<br>
+<%= link_to 'Звонки', calls_path %>
+<%= link_to 'Пользователи', users_path %>
+<%= link_to 'На главную', '/'%>

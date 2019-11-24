@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>City:</strong>
+  <strong>Город:</strong>
   <%= @tariff.city %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Цена:</strong>
   <%= @tariff.price %>
 </p>
 
 <p>
-  <strong>Special price:</strong>
+  <strong>Льготная цена:</strong>
   <%= @tariff.special_price %>
 </p>
 
 <p>
-  <strong>Expire date:</strong>
+  <strong>Действует до:</strong>
   <%= @tariff.expire_date %>
 </p>
 
-<%= link_to 'Edit', edit_tariff_path(@tariff) %> |
-<%= link_to 'Back', tariffs_path %>
+<%= link_to 'Править', edit_tariff_path(@tariff) %> |
+<%= link_to 'Назад', tariffs_path %>

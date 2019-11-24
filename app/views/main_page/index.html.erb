@@ -1,27 +1,25 @@
 <%= form_with(url: '/first', method: 'get', local: true) do |form| %>
-
-  <input name='month' type='month' />
-
+  <%= form.label 'Абоненты, звонившие в данный город в данный месяц' %>
   <select name='city'>
     <% Tariff.cities.each do |city| %>
       <option><%= city %></option>
     <% end %>
   </select>
-
-  <%= form.submit 'Show' %>
+  <input name='month' type='month' />
+  <%= form.submit 'Показать' %>
 <% end %>
-
+<hr>
 <%= form_with(url: '/second', method: 'get', local: true) do |form| %>
-  <%= form.label 'Bad users' %>
-  <%= form.submit 'Show' %>
+  <%= form.label 'Пользователи, имеющие задолженности' %>
+  <%= form.submit 'Показать' %>
 <% end %>
-
+<hr>
 <%= form_with(url: '/third', method: 'get', local: true) do |form| %>
+  <%= form.label 'Тарифы' %>
   <input name='date' type='date' />
-  <%= form.label 'Tariffs' %>
-  <%= form.submit 'Show' %>
+  <%= form.submit 'Показать' %>
 <% end %>
 
-<%= link_to 'Calls', calls_path %>
-<%= link_to 'Users', users_path %>
-<%= link_to 'Tariffs', tariffs_path %>
+<%= link_to 'Звонки', calls_path %>
+<%= link_to 'Пользователи', users_path %>
+<%= link_to 'Тарифы', tariffs_path %>
