@@ -17,11 +17,11 @@ module Invoices
     end
 
     def invoice_attributes
-    {
-        user_id: user_id,
-        call_id: new_call.id,
-        price: calculate_price
-    }
+      {
+          user_id: user_id,
+          call_id: new_call.id,
+          price: calculate_price
+      }
     end
 
     def user_id

@@ -54,6 +54,7 @@ class CallsController < ApplicationController
   # DELETE /calls/1
   # DELETE /calls/1.json
   def destroy
+    @call.invoice.delete
     @call.destroy
     respond_to do |format|
       format.html { redirect_to calls_url, notice: 'Call was successfully destroyed.' }
