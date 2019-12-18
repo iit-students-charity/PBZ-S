@@ -1,14 +1,11 @@
 # README
 
-Для успешного запуска спизженного кода вам необходимо иметь на своем устройстве:
+Для успешного запуска кода вам необходимо иметь на своем устройстве:
 
 1) Ruby 2.6.4
 2) PostgreSQL
 
 Инструкции по установке и запуску:
-> Если у вас настроены ключи SSH
-* Запускаем `git clone git@github.com:iit-students-charity/PBZ-S.git`;
-> Иначе
 * Запускаем `git clone https://github.com/iit-students-charity/PBZ-S.git`;
 * Заходим в папку PBZ-S;
 * Запускаем `bundle install`;
